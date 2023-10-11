@@ -59,7 +59,7 @@ let transform = d3.geoTransform({point: projectPoint}),
 // can make this changeable based on color scale selection?
 let thresholdScale = d3.scaleThreshold()
   .domain([1,5e3,10e3,20e3,50e3,100e3,200e3])
-  .range(['#d0d1e6','#FFFFB2','#FED976','#FEB24C','#FD8D3C','#FC4E2A','#E31A1C','#B10026']);    
+  .range(['#b3b3b3','#FFFFB2','#FED976','#FEB24C','#FD8D3C','#FC4E2A','#E31A1C','#B10026']);    
 
 // add a color legend
 let legend = L.control({position: 'bottomright'});
@@ -80,10 +80,10 @@ legend.onAdd = function (map) {
     
     // add on the zero and null points
     div.innerHTML +=
-            '<i style="background:#d0d1e6"></i> ' + "0 <br>";
+            '<i style="background:#b3b3b3"></i> ' + "0 <br>";
             
     div.innerHTML +=
-            '<i style="background:#b3b3b3"></i> ' + "No Data";
+            '<i style="background:#d0d1e6"></i> ' + "No Data";
 
     return div;
 };
@@ -141,7 +141,7 @@ function updateCircles(data) {
     .data(data)
     .join("circle")
     .attr("r", 3)
-    .style("fill", d => d.properties.total_density === null ? '#b3b3b3' : thresholdScale(d.properties.total_density))
+    .style("fill", d => d.properties.total_density === null ? '#d0d1e6' : thresholdScale(d.properties.total_density))
     .attr("fill-opacity", 1)
     .on("click", function(i,d) {
     
@@ -160,7 +160,7 @@ function updateCircles(data) {
         "Position: " + 
         Math.abs(d.LatLng.lat) + (d.LatLng.lat<0 ? "°S" : "°N") + " x " +
         Math.abs(d.LatLng.lng) + (d.LatLng.lng<0 ? "°W" : "°E") + "<br>" +
-        "Density: " + d.properties.total_density + " pieces/km2</p>")
+        "Density: " + d.properties.total_density + " particles/km2</p>")
      
       popuploc = d.LatLng
       
