@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Plastics Viz</title>
+
+    <!-- d3 libary -->
+<script src = "https://d3js.org/d3.v7.min.js"></script>
+
+<!-- leaflet library and style sheet -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.js"></script>
+
+<!-- Map custom CSS -->
+<link rel="stylesheet" href="css/map.css">
+
+<!-- noUIslider -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.5.1/nouislider.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.5.1/nouislider.min.js"></script>
+
+<!-- wNumb for formatting -->
+<script src="java/wNumb.js"></script>
+
+
+
+</head>
+
+<body>
+
+   <div class = "full-window">
+     <div id="map"></div>
+     <div id="navi">
+       <div id = "nav-content">
+       <h4>Density Filter</h4>
+       <p>(pieces/km<sup>2</sup>)</p>
+       <div class="slider-styled" id="slider"></div>
+       <div id = "slider-numbers">
+         <input type="number" min="0" max="100000" id="input-number-min">
+         <input type="number" min="1" max="200000" id="input-number-max">
+       </div>
+       <h4>Initial Date</h4>
+       <input type="date" id="datemin" value="1989-01-01" min="1989-01-01" max="2012-12-31">
+       <h4>Final Date</h4>
+       <input type="date" id="datemax" value="2012-12-31" min="1989-01-01" max="2012-12-31">
+       <button id ="update-button">Update Map</button>
+       <button id = "download-button"> Download CSV </button>
+
+     </div>
+     </div>
+   </div>
+
+<!-- map -->
+<script src="java/map.js"></script>  
+
+</body>
+
+</html>

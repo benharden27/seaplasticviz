@@ -1,0 +1,29 @@
+<style>
+.parallax { 
+/* The image used */
+    background-image: url({{ .Params.image }});
+/* Set a specific height */
+ width: 100vw;
+ position: relative;
+ margin-left: -50vw;
+ height: 200px;
+ left: 50%;
+/* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media only screen and (max-width:700px) {
+.parallax { 
+ height: 0px;
+}
+
+</style>
+
+<div class="parallax">
+<!---
+  <h1 class="page_title"> {{ .Title }} </h1>
+  --->
+</div>

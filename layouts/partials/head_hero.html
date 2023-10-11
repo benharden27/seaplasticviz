@@ -1,0 +1,41 @@
+<style>
+.hero-image { 
+/* The image used */
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ), url({{ .Params.image | absURL }});
+/* Set a specific height */
+ width: 100vw;
+ position: relative;
+ margin-left: -50vw;
+ height: 30vh;
+ left: 50%;
+/* Create the parallax scrolling effect */
+   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+
+{{ if isset .Params "video"}}
+<div class = "cont">
+<video id="video" width="100%" playsinline="" autoplay="" muted="" loop="" poster="">
+<source src="https://www.sea.edu/video/Study-Abroad-at-Sea540.mp4" type="video/mp4">
+<source src="https://www.sea.edu/video/Study-Abroad-at-Sea.webm" type="video/webm">
+<source src="https://www.sea.edu/video/Study-Abroad-at-Sea.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+    </video>
+  <div class="hero-text">
+    <h1>{{ .Title }}</h1>
+  </div>
+</div>
+
+
+{{ else if isset .Params "image" }}
+<div class="hero-image">
+  <div class="hero-text">
+    <h1>{{ .Title }}</h1>
+  </div>
+  </div>
+  {{ end }}

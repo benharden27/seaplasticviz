@@ -1,0 +1,26 @@
+<section class="container list">
+  {{ .Content }}
+  
+  {{ range .Sections }} 
+    <h1><a href = "{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}</a></h1>
+    <ul>
+    {{ range .Paginator.Pages }}
+    <li>
+      <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+      <a class="title" href="{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+    
+  {{ end }}
+  
+  <ul>
+    {{ range .Paginator.Pages }}
+    <li>
+      <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+      <a class="title" href="{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ partial "pagination.html" . }}
+</section>

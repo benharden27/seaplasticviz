@@ -1,0 +1,14 @@
+
+
+<section class="container page">
+
+<article>
+  {{ if not (isset .Params "image") }} 
+      <h1 class = "title">{{ .Title }}</h1>
+      {{ if isset .Params "date"}}
+          <h4>{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</h4>
+      {{ end }}
+  {{ end }}
+  {{ .Content }}
+</article>
+</section>
