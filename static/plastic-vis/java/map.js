@@ -194,23 +194,23 @@ function csvmaker(data) {
     // Empty array for storing the values
     csvRows = [];
     
-    csvRows.push("lon	= Longitude [deg E]")
-    csvRows.push("lat = Latitude [deg N]")
-    csvRows.push("basin = Ocean Basin [pacific/atlantic]")
-    csvRows.push("full_station = Station ID [cruiseID-stationnumber]")
-    csvRows.push("ship = SEA Sailing School Vessel [W - SSV Westward, C - SSV Corwith Cramer, S - SSV Robert C Seamans]")
-    csvRows.push("cruise = SEA cruise ID")
-    csvRows.push("station = Numerical station number fr specific cruise") 
-    csvRows.push("time = Time of Station")
-    csvRows.push("zd = Zone Description")
-    csvRows.push("tow_area = Area of surface towed [m^2]")
-    csvRows.push("pellets = Number of plastic pellets in tow")
-    csvRows.push("pieces = Number of plastic pieces in tow")
-    csvRows.push("total_plastic = Total number of pellets and pieces")
-    csvRows.push("pellet_density = Plastic pellet density [particles/km^2]")
-    csvRows.push("piece_density = Plastic piece density [particles/km^2]")
-    csvRows.push("total_density = Total plastic particle density [particles/km^2]")
-    
+    csvRows.push("lon	= Longitude [deg E]");
+    csvRows.push("lat = Latitude [deg N]");
+    csvRows.push("basin = Ocean Basin [pacific/atlantic]");
+    csvRows.push("full_station = Station ID [cruiseID-stationnumber]");
+    csvRows.push("ship = SEA Sailing School Vessel [W - SSV Westward | C - SSV Corwith Cramer | S - SSV Robert C Seamans]");
+    csvRows.push("cruise = SEA cruise ID");
+    csvRows.push("station = Numerical station number fr specific cruise");
+    csvRows.push("time = Time of Station");
+    csvRows.push("zd = Zone Description");
+    csvRows.push("tow_area = Area of surface towed [m^2]");
+    csvRows.push("pellets = Number of plastic pellets in tow");
+    csvRows.push("pieces = Number of plastic pieces in tow");
+    csvRows.push("total_plastic = Total number of pellets and pieces");
+    csvRows.push("pellet_density = Plastic pellet density [particles/km^2]");
+    csvRows.push("piece_density = Plastic piece density [particles/km^2]");
+    csvRows.push("total_density = Total plastic particle density [particles/km^2]");
+
     // lon and lat headers
     let headers_lonlat = 'lon,lat,'
  
