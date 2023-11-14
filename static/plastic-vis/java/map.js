@@ -19,9 +19,14 @@ noUiSlider.create(slidervar, {
     pips: {
         mode: 'values',
         values: [0, 1, 5000, 10000, 50000, 100000, 200000],
-        density: 4},
-   format: wNumb({
-        decimals: 0
+        density: 4,
+        format: wNumb({
+          decimals: 0,
+          thousand: ','
+        })
+    },
+    format: wNumb({
+          decimals: 0
         })
 });
 
@@ -81,9 +86,7 @@ legend.onAdd = function (map) {
     // add on the zero and null points
     div.innerHTML +=
             '<i style="background:#b3b3b3"></i> ' + "0 <br>";
-            
-    div.innerHTML +=
-            '<i style="background:#d0d1e6"></i> ' + "No Data";
+
 
     return div;
 };
@@ -160,7 +163,7 @@ function updateCircles(data) {
         "Position: " + 
         Math.abs(d.LatLng.lat) + (d.LatLng.lat<0 ? "°S" : "°N") + " x " +
         Math.abs(d.LatLng.lng) + (d.LatLng.lng<0 ? "°W" : "°E") + "<br>" +
-        "Density: " + d.properties.total_density + " particles/km2</p>")
+        "Density: " + d.properties.total_density + " particles/km<sup>2</sup></p>")
      
       popuploc = d.LatLng
       
@@ -205,8 +208,8 @@ function csvmaker(data) {
     csvRows.push("zd = Zone Description");
     csvRows.push("tow_area = Area of surface towed [m^2]");
     csvRows.push("pellets = Number of plastic pellets in tow");
-    csvRows.push("pieces = Number of plastic pieces in tow");
-    csvRows.push("total_plastic = Total number of pellets and pieces");
+    csvRows.push("particles= Number of plastic particles in tow");
+    csvRows.push("total_plastic = Total number of pellets and particles");
     csvRows.push("pellet_density = Plastic pellet density [particles/km^2]");
     csvRows.push("piece_density = Plastic piece density [particles/km^2]");
     csvRows.push("total_density = Total plastic particle density [particles/km^2]");
