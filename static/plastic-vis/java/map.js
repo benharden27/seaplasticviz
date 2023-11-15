@@ -22,8 +22,14 @@ noUiSlider.create(slidervar, {
         density: 4,
         format: wNumb({
           decimals: 0,
-          thousand: ','
-        })
+          thousand: ',',
+          edit: function(value) { 
+            if (value < 1) {
+              value = "" + value + "-None"
+            }
+            return value
+          }
+        }),
     },
     format: wNumb({
           decimals: 0
@@ -203,15 +209,16 @@ function csvmaker(data) {
     csvRows.push("full_station = Station ID [cruiseID-stationnumber]");
     csvRows.push("ship = SEA Sailing School Vessel [W - SSV Westward | C - SSV Corwith Cramer | S - SSV Robert C Seamans]");
     csvRows.push("cruise = SEA cruise ID");
+    csvRows.push("cruise_code = SEA cruise ID suffix for short cruises taking same main numerical cruise ID as another");
     csvRows.push("station = Numerical station number fr specific cruise");
     csvRows.push("time = Time of Station");
-    csvRows.push("zd = Zone Description");
+    csvRows.push("zd = Zone Description; Time in GMT = time + zd");
     csvRows.push("tow_area = Area of surface towed [m^2]");
     csvRows.push("pellets = Number of plastic pellets in tow");
-    csvRows.push("particles= Number of plastic particles in tow");
+    csvRows.push("fragments = Number of plastic fragments in tow");
     csvRows.push("total_plastic = Total number of pellets and particles");
     csvRows.push("pellet_density = Plastic pellet density [particles/km^2]");
-    csvRows.push("piece_density = Plastic piece density [particles/km^2]");
+    csvRows.push("fragment_density = Plastic fragment density [particles/km^2]");
     csvRows.push("total_density = Total plastic particle density [particles/km^2]");
 
     // lon and lat headers
